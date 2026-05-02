@@ -54,6 +54,16 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for webkit browsers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;

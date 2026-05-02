@@ -31,7 +31,7 @@ export default function SlideNavigation({ currentSlide, totalSlides }: SlideNavi
   console.log('Logic:', { isFirstSlide, isLastSlide, showUpArrow, showDownArrow });
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col gap-3 z-30">
+    <div className="hidden md:flex fixed bottom-8 left-1/2 -translate-x-1/2 flex-col gap-3 z-30">
       {/* Up Arrow - Peachy Coral */}
       {showUpArrow && (
         <motion.button

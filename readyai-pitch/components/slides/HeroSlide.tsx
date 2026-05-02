@@ -12,20 +12,17 @@ export default function HeroSlide() {
   return (
     <Slide id="hero" background="white" index={1}>
       <Container className="text-center flex flex-col items-center justify-center min-h-screen">
-        {/* Floating Laszlo at top */}
-        <motion.div
-          animate={FLOAT_ANIMATION}
-          className="mb-8"
-        >
+        {/* Hero Image at top */}
+        <div className="mb-2">
           <Image
-            src="/laszlo.svg"
-            alt="Laszlo AI Assistant"
-            width={200}
-            height={200}
-            className="mx-auto"
+            src="/hero.png"
+            alt="ReadyMove Hero"
+            width={400}
+            height={400}
+            className="mx-auto max-w-md"
             priority
           />
-        </motion.div>
+        </div>
 
         {/* Main tagline */}
         <motion.div {...FADE_IN_UP}>

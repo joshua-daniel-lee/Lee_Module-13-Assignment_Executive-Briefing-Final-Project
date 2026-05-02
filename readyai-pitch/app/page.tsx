@@ -1,6 +1,8 @@
 import Navbar from '@/components/layout/Navbar';
 import HeroSlide from '@/components/slides/HeroSlide';
-import Slide2 from '@/components/slides/Slide2';
+import ProblemSlide from '@/components/slides/ProblemSlide';
+// import SolutionSlide from '@/components/slides/SolutionSlide'; // Original 5-card grid version
+import SolutionSlideAlt from '@/components/slides/SolutionSlideAlt'; // Alternative split-screen version
 import GlobalSlideNavigation from '@/components/ui/GlobalSlideNavigation';
 
 export default function Home() {
@@ -9,7 +11,8 @@ export default function Home() {
       <Navbar />
       <GlobalSlideNavigation totalSlides={13} />
       <HeroSlide />
-      <Slide2 />
+      <ProblemSlide />
+      <SolutionSlideAlt />
     </main>
   );
 }

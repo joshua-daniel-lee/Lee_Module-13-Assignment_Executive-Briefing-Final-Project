@@ -8,7 +8,8 @@ export interface SlideMetadata {
 
 export const SLIDE_METADATA: SlideMetadata[] = [
   { id: 'hero', title: 'Welcome', index: 1 },
-  { id: 'slide-2', title: 'Test Slide', index: 2 },
+  { id: 'problem', title: 'The Problem', index: 2 },
+  { id: 'solution', title: 'The Solution', index: 3 },
   // Add more slides here as they are created
 ];
 
