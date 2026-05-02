@@ -8,6 +8,9 @@ import SlideDropdown from './SlideDropdown';
 export default function Navbar() {
   const totalSlides = getTotalSlides();
   const activeSlide = useActiveSlide(totalSlides);
+  
+  // Get the active slide ID based on the current slide index
+  const activeSlideId = SLIDE_METADATA[activeSlide - 1]?.id;
 
   const scrollToSlide = (slideId: string) => {
     const slide = SLIDE_METADATA.find(s => s.id === slideId);
@@ -22,7 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left */}
@@ -48,10 +51,10 @@ export default function Navbar() {
 
           {/* Right Section - Dropdown + Georgetown */}
           <div className="flex items-center gap-3">
+            <SlideDropdown slides={SLIDE_METADATA} onSelect={scrollToSlide} activeSlideId={activeSlideId} />
             <div className="hidden sm:flex items-center px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200">
               <span className="text-xs font-medium text-gray-600">Georgetown University</span>
             </div>
-            <SlideDropdown slides={SLIDE_METADATA} onSelect={scrollToSlide} />
           </div>
         </div>
       </div>
