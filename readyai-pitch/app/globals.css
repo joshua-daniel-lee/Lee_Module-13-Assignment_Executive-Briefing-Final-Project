@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  /* ReadyMove Branding Colors */
+  --color-primary: #2d5a3d;      /* Pine Green */
+  --color-accent: #FF4081;       /* Wild Strawberry */
+  --color-pine-dark: #24492f;    /* Pine Dark */
+  --color-pine-darker: #1a3522;  /* Pine Darker */
+  --color-strawberry-dark: #CC3367; /* Strawberry Dark */
+  --color-mint: #B2DFDB;         /* Mint (optional) */
+  
+  /* Shadow Effects */
+  --shadow-glow-primary: 0 0 24px rgb(45 90 61 / 0.15), 0 4px 12px -2px rgb(0 0 0 / 0.05);
+  --shadow-glow-accent: 0 0 24px rgb(255 64 129 / 0.15), 0 4px 12px -2px rgb(0 0 0 / 0.05);
+  
+  /* Neutral Colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  --surface: #F9FAFB;
+}
+
+/* Gradient Utilities */
+@utility gradient-animated {
+  background: linear-gradient(-45deg, #2d5a3d, #24492f, #1a3522, #FF4081);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@utility gradient-primary {
+  background: linear-gradient(135deg, #2d5a3d 0%, #24492f 100%);
+}
+
+@utility gradient-accent {
+  background: linear-gradient(135deg, #FF4081 0%, #CC3367 100%);
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, #2d5a3d, #FF4081);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding-bottom: 0.25em;
+  line-height: 1.15;
+}
+
+@utility smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pine-dark);
+}
+
+/* Scroll Snap for Slides */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
